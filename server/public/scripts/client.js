@@ -3,6 +3,7 @@ $( document ).ready( onReady );
 function onReady(){
     getSongs();
     $( '#addSongButton' ).on( 'click', addSong );
+    $(document).on('click', '.deleteSongBtn', deleteSong)
 } // end onReady
 
 function addSong(){
@@ -40,6 +41,7 @@ function getSongs(){
             ${ response[i].track }
             ${ response[i].artist }
             ${ response[i].published.split( 'T' )[0] }
+            <button class="deleteSongBtn" data-id="${response[i].id}">Delete Me</button>
             </li>`)
         } // end for
     }).catch( function( err ){
@@ -47,3 +49,20 @@ function getSongs(){
         console.log( err );
     }) // end AJAX GET
 } // end getSongs()
+
+function deleteSong(){
+    console.log('in delete');
+    
+let songId = $(this).data('id'); // TODO
+$.ajax({
+    method: 'DELETE',
+    url: `/songs/${songId}`
+}).then(function(response){
+console.log('deleted', response);
+}).catch(function(error){
+console.log('error in delete', error);
+
+});
+
+
+} // end deleteSong

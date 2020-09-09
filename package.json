@@ -13,5 +13,14 @@
   "dependencies": {
     "express": "^4.17.1",
     "pg": "^8.3.3"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/derekwilliamson22/tarjanFullStackIntro.git"
+  },
+  "bugs": {
+    "url": "https://github.com/derekwilliamson22/tarjanFullStackIntro/issues"
+  },
+  "homepage": "https://github.com/derekwilliamson22/tarjanFullStackIntro#readme"
 }
