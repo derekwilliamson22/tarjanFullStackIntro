@@ -89,6 +89,7 @@ function rankUp() {
   })
     .then(function (response) {
       console.log("response from rankUp", response);
+      getSongs();
     })
     .catch(function (error) {
       console.log("error in rankUp", error);
